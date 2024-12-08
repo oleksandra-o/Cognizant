@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f9f3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(120deg, #daf5dc, #e8f8ee);
+    border-bottom: 2px solid #5c946e;
+}
+
+.navbar-brand {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    color: #5c946e;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #5c946e;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/images/orchid-white.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+}
+
+/* Footer */
+footer {
+    background-color: #5c946e;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#map {
+    height: 450px;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
