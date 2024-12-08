@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Leafy Match</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products">Products</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Our Products</h2>
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <img src="<%= product.Image %>" alt="<%= product.Name %>" style="width:100px; height:100px;">
+          <h3><%= product.Name %></h3>
+          <p><%= product.Description %></p>
+          <p>Price: $<%= product.Cost %></p>
+          <p>Light: <%= product.Light %> | Watering: <%= product.Watering %></p>
+        </li>
+      <% }); %>
+    </ul>
+  </main>
+  <footer>
+    <p>&copy; 2024 Leafy Match</p>
+  </footer>
+</body>
+</html>
