@@ -1,16 +1,31 @@
 /* General Styles */
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
     font-family: 'Lato', sans-serif;
     background-color: #f8f9f3;
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
-/* Navbar */
+/* Main Content */
+main {
+    flex: 1; /* Ensures it fills available space */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* Navbar (Sticky) */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background: linear-gradient(120deg, #daf5dc, #e8f8ee);
     border-bottom: 2px solid #5c946e;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -28,44 +43,42 @@ body {
     color: #5c946e;
 }
 
-/* Hero Section */
-/* Parallax Effect */
+/* Hero Section with Parallax Effect */
 .hero-section {
-    height: 100vh;
-    background: url('/images/orchid-white.jpg') no-repeat center center/cover;
+    min-height: 100vh; /* Ensures it spans full viewport height */
+    background: url('/images/orchid-white.jpg') no-repeat center center;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
+    text-align: center;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 .hero-section h1 {
-    font-size: 3.5rem;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    font-size: 4rem;
+    margin: 0;
 }
 
 .hero-section p {
-    font-size: 1.25rem;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
-    
-    margin: auto;
-    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
 }
 
-
-/* Footer */
+/* Footer (Sticky) */
 footer {
+   /* position: sticky;*/
+    bottom: 0;
+    z-index: 10;
     background-color: #5c946e;
     color: white;
-    padding: 1rem;
+    padding: 0.3rem;
     text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.2;
 }
 
 footer a {
@@ -77,8 +90,20 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* Product Cards */
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Map */
 #map {
     height: 450px;
     width: 100%;
     border: 1px solid #ccc;
-  }
+}
