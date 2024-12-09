@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 // Route: Cart Page
 app.get('/cart', (req, res) => {
   const cartItems = req.session.cart || [];
-  const subtotal = cartItems.reduce((acc, item) => acc + item.price, 0);
+  const subtotal = cartItems.reduce((acc, item) => acc + parseFloat(item.price), 0);
   const tax = subtotal * 0.1; // Example: 10% tax
   const shippingCost = cartItems.length > 0 ? 10 : 0; // Flat $10 shipping
   const total = subtotal + tax + shippingCost;
@@ -63,10 +63,10 @@ app.get('/cart', (req, res) => {
   res.render('cart', {
     title: 'Your Cart',
     cartItems,
-    subtotal,
-    tax,
-    shippingCost,
-    total,
+    subtotal: subtotal.toFixed(2),
+    tax: tax.toFixed(2),
+    shippingCost: shippingCost.toFixed(2),
+    total: total.toFixed(2),
   });
 });
 
@@ -83,6 +83,16 @@ app.post('/cart/add', (req, res) => {
   }
 
   req.session.cart.push({ id, name, price });
+  return res.json({ success: true });
+});
+
+// Route: Remove from Cart
+app.delete('/cart/remove/:id', (req, res) => {
+  const itemId = req.params.id;
+
+  let cart = req.session.cart || [];
+  req.session.cart = cart.filter(item => item.id != itemId); // Ensure `item.id` is not strictly matched as string/number
+
   return res.json({ success: true });
 });
 
