@@ -6,7 +6,7 @@ const path = require('path');
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Chicago1$', // Replace with your MySQL root password
+  password: 'Chicago1$', 
   database: 'leafy_match',
 });
 
