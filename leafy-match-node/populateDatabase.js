@@ -6,7 +6,7 @@ const path = require('path');
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Chicago1$', 
+  password: 'Chicago1$', // my psw
   database: 'leafy_match',
 });
 
